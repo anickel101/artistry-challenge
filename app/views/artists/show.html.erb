@@ -1,0 +1,27 @@
+<h1>Artist Show Page</h1>
+
+<p>Artist Name:
+<h3><%= @artist.name %></h3>
+</p>
+<p>
+Artist Title:<br>
+<h3><%= @artist.title %></h3>
+</p>
+<p>
+Artist Age:<br>
+<h3><%= @artist.age %></h3>
+</p>
+    
+
+Artist Instruments:<br>
+<ul><% @artist.instruments.each do |instrument| %>
+<li><h3><%= link_to(instrument.name, instrument_path(instrument)) %></h3></li>
+<% end %>
+</ul>
+
+<h3>Add Instrument:</h3>
+<%= button_to("Add Instrument", new_artist_instrument_path, method: :get)%>
+<h3>Back to Index:</h3>
+<%= button_to("Index", artists_path, method: :get) %>
+<h3>Delete Artist:</h3>
+<%= button_to("Delete Artist", artist_path(@artist), method: :delete) %>

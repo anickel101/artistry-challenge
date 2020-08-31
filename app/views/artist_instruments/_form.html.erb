@@ -1,0 +1,11 @@
+<%= form_for @artist_instrument do |ai| %>
+
+Artist:
+<%= ai.collection_select :artist_id, Artist.all, :id, :name %>
+
+Instrument:
+<%= ai.collection_select :instrument_id, Instrument.all, :id, :name %>
+
+<%= ai.submit "Add Instrument to Collection" %>
+
+<% end %>

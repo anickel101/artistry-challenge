@@ -1,0 +1,15 @@
+<%= form_for @artist do |a| %>
+
+Artist Name:
+<%= a.text_field :name %>
+
+Artist Title:
+<%= a.text_field :title %>
+
+Artist Age:
+<%= a.number_field :age %>
+
+
+<%= a.submit "Add New Artist" %>
+
+<% end %>
